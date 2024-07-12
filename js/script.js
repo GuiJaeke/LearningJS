@@ -15,15 +15,20 @@ console.log("script linkado na casa do krl")
  var verd = true
  console.log(verd)
  console.log(typeof verd)
- var gjk = {
-   nome: "dedexinho",
-   idade: 19,
-   profissao: "programador"
- }
- console.log(gjk)
- console.log(typeof gjk)
- console.log(gjk.idade)
- console.log("O nome é " + gjk.nome)
+
  var arr = ["guitop", 22, "olhador", true]
  console.log(arr[1])
  console.log(arr)
+
+ var form = {
+   nome: "guilherme",
+   idade: 22,
+   profissao: "top demais"
+ }
+ if (form.idade > 18) {
+   console.log("acesso permitido ao site!")
+ }
+ else {
+   console.log("acesso negado!")
+ }
+ console.log(form)
