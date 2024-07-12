@@ -42,7 +42,19 @@ console.log("script linkado na casa do krl")
  if (num !== 5) {
    console.log("não é a mesma função");
    }
+ if (nome == "guilherme" && idade >= 18) {
+   console.log("que coisa linda cara, meu deus!!")
+ }
+ else{
+   console.log("não foi otário")
+ }
  if (nome == "guilherm" || idade >= 18) {
+   console.log("que coisa linda cara, meu deus!!")
+ }
+ else{
+   console.log("não foi otário")
+ }
+ if (!(nome == "guilherm" && idade >= 18)) {
    console.log("que coisa linda cara, meu deus!!")
  }
  else{
