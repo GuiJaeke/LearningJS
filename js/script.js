@@ -4,6 +4,8 @@ console.log("script linkado na casa do krl")
  var b = a / 5
  var batata = "batata"
  var andre = "andré gosta de "
+ var nome = "guilherme"
+ var idade = 22
  if(b < a) {
     console.log(a)
  }
@@ -32,3 +34,17 @@ console.log("script linkado na casa do krl")
    console.log("acesso negado!")
  }
  console.log(form)
+ var num = '5';
+
+ if (num == 5) {
+   console.log("mesma função")
+ }
+ if (num !== 5) {
+   console.log("não é a mesma função");
+   }
+ if (nome == "guilherm" || idade >= 18) {
+   console.log("que coisa linda cara, meu deus!!")
+ }
+ else{
+   console.log("não foi otário")
+ }
