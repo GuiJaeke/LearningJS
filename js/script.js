@@ -92,3 +92,26 @@ function soma (a, b) {
 
 var res = soma (55, 88)
 console.log(res)
+
+//                 DOM                 //
+
+var lista = ['bros', 'titan', 'fan', 'start', 'hornet']
+
+var listaul = document.createElement('ul'); // cria uma ul basica no HTML
+
+var body = document.getElementsByTagName('body'); // pega o 'body' criado em HTML e insere no JS
+
+body[0].appendChild(listaul) // insere a ul criada na var listaul no 'body' do HTML
+
+var listaNoBody = document.getElementsByTagName('ul') // pega a ul basica criada na var listaul
+
+for (var i = 0; i < lista.length; i++) {
+  var liFor = document.createElement('li'); // cria uma li basica para cada indice da lista
+
+  var textLI = document.createTextNode(lista[i]); //escreve cada indice da lista e fica armazenado no textLI
+
+  liFor.appendChild(textLI); // pega o que ta escrito no textLI e coloca na li basica criada na primeira variável do 'for'
+
+  listaNoBody[0].appendChild(liFor); // acrescenta o li com o texto pronto na ul basica criada pela variável listaNoBody fora do 'for'
+
+}
