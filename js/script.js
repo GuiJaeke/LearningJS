@@ -128,3 +128,46 @@ if (true) {
   let y = 72
   console.log(y)
 }
+
+// parsefloat
+
+console.log(parseFloat('10.56544'))
+console.log(Number.parseFloat('10.56544'))
+
+// parseint
+
+console.log(parseInt('52'))
+console.log(parseInt(2.688))
+
+// tofixed
+
+console.log(25.65885.toFixed(2))
+
+// isNaN
+
+console.log(isNaN("teste"))
+console.log(isNaN("55"))
+console.log(isNaN(55))
+
+//MAX_VALUE e MIN_VALUE
+
+console.log(Number.MAX_VALUE)
+console.log(Number.MIN_VALUE)
+
+// indexOf
+
+lista = "frase top demais ta louco"
+
+console.log(lista.indexOf("demais"))
+
+// slice
+
+var ret = lista.slice(10, 16)
+
+console.log(ret)
+
+// replace
+
+var rep = lista.replace("demais", "demasiado")
+
+console.log(rep)
