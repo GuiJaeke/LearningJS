@@ -94,7 +94,7 @@ var res = soma (55, 88)
 console.log(res)
 
 //                 DOM                 //
-
+function ulSite() {
 var lista = ['bros', 'titan', 'fan', 'start', 'hornet']
 
 var listaul = document.createElement('ul'); // cria uma ul basica no HTML
@@ -114,4 +114,17 @@ for (var i = 0; i < lista.length; i++) {
 
   listaNoBody[0].appendChild(liFor); // acrescenta o li com o texto pronto na ul basica criada pela variável listaNoBody fora do 'for'
 
+}
+}
+
+let y = 3;
+
+y = 33;
+
+const z = 50
+
+console.log(y)
+if (true) {
+  let y = 72
+  console.log(y)
 }
