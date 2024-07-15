@@ -65,6 +65,7 @@ console.log("script linkado na casa do krl")
   console.log(idade)
  }
  console.log(idade)
+// While e For
  var x = 0
  while (x <= 3) {
   console.log(arr[x])
@@ -73,3 +74,21 @@ console.log("script linkado na casa do krl")
  for (var i = 0; i < arr.length; i++) {
   console.log(arr[i])
  }
+function primfunc() {
+  console.log(form.idade)
+ }
+ primfunc()
+
+function dizerNome(nome) {
+  console.log(nome)
+
+ }
+dizerNome("guizindabros")
+
+function soma (a, b) {
+  var soma = a + b
+  return soma
+}
+
+var res = soma (55, 88)
+console.log(res)
