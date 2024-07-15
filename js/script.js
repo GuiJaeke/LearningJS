@@ -156,7 +156,7 @@ console.log(Number.MIN_VALUE)
 
 // indexOf
 
-lista = "frase top demais ta louco"
+lista = "frase top demais ta louco demais"
 
 console.log(lista.indexOf("demais"))
 
@@ -171,3 +171,29 @@ console.log(ret)
 var rep = lista.replace("demais", "demasiado")
 
 console.log(rep)
+
+//toLowerCase e ToUpperCase
+
+var frase = "Dede10 não é poderoso fodão"
+
+console.log(frase.toLowerCase())
+console.log(frase.toUpperCase())
+
+// trim
+
+var nometrim = "     dedeu      "
+var mod = nometrim.trim()
+
+
+console.log(nometrim)
+console.log(mod)
+
+// split
+
+listasplit = lista.split(" ")
+console.log(listasplit)
+console.log(listasplit[1])
+
+// lastIndexOf
+
+console.log(lista.lastIndexOf("demais"))
