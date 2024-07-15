@@ -5,7 +5,7 @@ console.log("script linkado na casa do krl")
  var batata = "batata"
  var andre = "andré gosta de "
  var nome = "guilherme"
- var idade = 22
+ var idade = 1
  if(b < a) {
     console.log(a)
  }
@@ -59,4 +59,17 @@ console.log("script linkado na casa do krl")
  }
  else{
    console.log("não foi otário")
+ }
+ while (idade < 18) {
+  idade = idade + 1,
+  console.log(idade)
+ }
+ console.log(idade)
+ var x = 0
+ while (x <= 3) {
+  console.log(arr[x])
+  x = x +1
+ }
+ for (var i = 0; i < arr.length; i++) {
+  console.log(arr[i])
  }
