@@ -197,3 +197,45 @@ console.log(listasplit[1])
 // lastIndexOf
 
 console.log(lista.lastIndexOf("demais"))
+
+// push
+
+listasplit.push("guimaneirão")
+
+console.log(listasplit)
+
+// pop
+
+listasplit.pop()
+listasplit.pop()
+
+console.log(listasplit)
+
+// unshift
+
+listasplit.unshift("essa")
+
+console.log(listasplit)
+
+// função console.log
+
+function cl(a) {
+  console.log(a)
+}
+
+cl(listasplit[5])
+
+// shift
+
+listasplit.shift()
+
+cl(listasplit)
+
+// splice
+
+listasplit.splice(3, 0, "você")
+cl(listasplit)
+
+// join
+
+cl(listasplit.join(" "))
