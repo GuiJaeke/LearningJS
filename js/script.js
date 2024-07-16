@@ -239,3 +239,26 @@ cl(listasplit)
 // join
 
 cl(listasplit.join(" "))
+
+// objetos e this
+
+let pessoa = {
+  nome: "marqueens",
+  idade: 32,
+  falar: function() {
+    cl("olá mi amigo")
+  },
+  sum: function (a, b) {
+    return a + b
+  },
+  dznome: function() {
+    console.log("O meu nome é " + this.nome)
+  }
+};
+
+cl(pessoa)
+pessoa.dznome()
+let sum = pessoa.sum(65, 22);
+
+cl(sum)
+
