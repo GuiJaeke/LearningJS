@@ -44,4 +44,5 @@ button{
     color: red;
     -webkit-text-stroke: 1px;
     -webkit-text-stroke-color: blue;
+    border-radius: 5px;
 }

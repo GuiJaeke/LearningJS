@@ -262,4 +262,30 @@ let sum = pessoa.sum(65, 22);
 
 cl(sum)
 
-ulSite()
+// acessando tags
+
+var lis = document.getElementsByTagName('li')
+
+cl(lis)
+
+// querySelector e querySelectorAll
+
+var liqs = document.querySelector('ul')
+
+cl(liqs)
+
+var liqs = document.querySelectorAll('li')
+
+cl(liqs)
+
+//textContent e innerHTML
+
+var alth1 = document.querySelector('h1')
+cl(alth1)
+
+alth1.innerHTML = "foi quase vai"
+
+var alth2 = document.querySelector('h2')
+cl(alth1)
+
+alth2.textContent = "parte2"
