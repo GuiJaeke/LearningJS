@@ -289,3 +289,43 @@ var alth2 = document.querySelector('h2')
 cl(alth1)
 
 alth2.textContent = "parte2"
+
+ulSite()
+
+// criando novos elementos via DOM
+
+var newP = document.createElement('p')
+var textoP = document.createTextNode("Ao observar as intenções das pessoas no dia a dia")
+
+newP.appendChild(textoP)
+
+var body = document.querySelector('body')
+
+body.appendChild(newP)
+
+// inserindo em div
+
+var divi = document.querySelector('div')
+var newP2 = document.createElement('p')
+var textoP2 = document.createTextNode("denota-se uma falta de compaixão pelo próximo")
+newP2.appendChild(textoP2)
+divi.appendChild(newP2)
+
+// removeChild e remove
+//divi.removeChild(newP2)
+
+var estouro = document.querySelector('h2')
+
+estouro.remove()
+
+// diferença appendChild e insertBefore
+
+var criaDiv = document.createElement('div')
+
+criaDiv.classList = "js"
+
+criaDiv.appendChild(newP2)
+
+cl(criaDiv)
+
+divi.appendChild(criaDiv)
