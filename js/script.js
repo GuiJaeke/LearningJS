@@ -376,8 +376,6 @@ setTimeout(function(){
 
 document.addEventListener("keydown", function(event) {
   cl(event.key)
-  if (event.key === Enter) {
-    cl('Faaaaaaaaaaaaaaaaaaala timóteo.')
-  }
+  
 
 })

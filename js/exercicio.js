@@ -316,6 +316,8 @@ var mult = document.getElementById('mult').addEventListener('click', function ()
     resul = document.getElementById('resul').addEventListener('click', function() {
         let segnum = number2.join('')
         cl(segnum)
+        number = []
+        number2 = []
         let conta = parseInt(primnum) * parseInt (segnum)
         sum.removeChild(print)
         print = document.createTextNode(conta)
@@ -389,11 +391,14 @@ var divis = document.getElementById('divis').addEventListener('click', function 
     resul = document.getElementById('resul').addEventListener('click', function() {
         let segnum = number2.join('')
         cl(segnum)
+        number = []
+        number2 = []
         let conta = parseInt(primnum) / parseInt (segnum)
         sum.removeChild(print)
         print = document.createTextNode(conta)
         sum.appendChild(print)
-        res.appendChild(sum)    
+        res.appendChild(sum)
+        
 })
 })
 x = 0
