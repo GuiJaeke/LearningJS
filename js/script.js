@@ -154,91 +154,91 @@ console.log(isNaN(55))
 console.log(Number.MAX_VALUE)
 console.log(Number.MIN_VALUE)
 
-// indexOf
+// // indexOf
 
-lista = "frase top demais ta louco demais"
+// lista = "frase top demais ta louco demais"
 
-console.log(lista.indexOf("demais"))
+// console.log(lista.indexOf("demais"))
 
-// slice
+// // slice
 
-var ret = lista.slice(10, 16)
+// var ret = lista.slice(10, 16)
 
-console.log(ret)
+// console.log(ret)
 
-// replace
+// // replace
 
-var rep = lista.replace("demais", "demasiado")
+// var rep = lista.replace("demais", "demasiado")
 
-console.log(rep)
+// console.log(rep)
 
-//toLowerCase e ToUpperCase
+// //toLowerCase e ToUpperCase
 
-var frase = "Dede10 não é poderoso fodão"
+// var frase = "Dede10 não é poderoso fodão"
 
-console.log(frase.toLowerCase())
-console.log(frase.toUpperCase())
+// console.log(frase.toLowerCase())
+// console.log(frase.toUpperCase())
 
-// trim
+// // trim
 
-var nometrim = "     dedeu      "
-var mod = nometrim.trim()
+// var nometrim = "     dedeu      "
+// var mod = nometrim.trim()
 
 
-console.log(nometrim)
-console.log(mod)
+// console.log(nometrim)
+// console.log(mod)
 
-// split
+// // split
 
-listasplit = lista.split(" ")
-console.log(listasplit)
-console.log(listasplit[1])
+// listasplit = lista.split(" ")
+// console.log(listasplit)
+// console.log(listasplit[1])
 
-// lastIndexOf
+// // lastIndexOf
 
-console.log(lista.lastIndexOf("demais"))
+// console.log(lista.lastIndexOf("demais"))
 
-// push
+// // push
 
-listasplit.push("guimaneirão")
+// listasplit.push("guimaneirão")
 
-console.log(listasplit)
+// console.log(listasplit)
 
-// pop
+// // pop
 
-listasplit.pop()
-listasplit.pop()
+// listasplit.pop()
+// listasplit.pop()
 
-console.log(listasplit)
+// console.log(listasplit)
 
-// unshift
+// // unshift
 
-listasplit.unshift("essa")
+// listasplit.unshift("essa")
 
-console.log(listasplit)
+// console.log(listasplit)
 
-// função console.log
+// // função console.log
 
 function cl(a) {
   console.log(a)
 }
 
-cl(listasplit[5]);
+// cl(listasplit[5]);
 
-// shift
+// // shift
 
-listasplit.shift()
+// listasplit.shift()
 
-cl(listasplit)
+// cl(listasplit)
 
-// splice
+// // splice
 
-listasplit.splice(3, 0, "você")
-cl(listasplit)
+// listasplit.splice(3, 0, "você")
+// cl(listasplit)
 
-// join
+// // join
 
-cl(listasplit.join(" "))
+// cl(listasplit.join(" "))
 
 // objetos e this
 
@@ -307,7 +307,7 @@ body.appendChild(newP)
 
 var divi = document.querySelector('div')
 var newP2 = document.createElement('p')
-//var textoP2 = document.createTextNode("denota-se uma falta de compaixão pelo próximo")
+var textoP2 = document.createTextNode("denota")
 newP2.appendChild(textoP2)
 divi.appendChild(newP2)
 
@@ -339,3 +339,45 @@ let lista = array.filter((numero) => {
 })
 
 console.log(lista);
+
+// setAtribute e removeAtribute
+
+var title = document.getElementById("h123");
+cl(title)
+title.setAttribute("class", "testenome");
+
+cl(title)
+
+title.removeAttribute("class");
+
+cl(title)
+
+// adicionando CSS com JS
+
+title.style.color="white"
+title.style.textDecoration="underline"
+
+// TimeOut e interval
+
+setTimeout(function(){
+  console.log("1, 2 e 3")
+},3000)
+
+var inter = setInterval(function(){ 
+  console.log("1,5 e 3")
+},1500)
+
+setTimeout(function(){
+  console.log("acabooooooooooou")
+  clearInterval(inter)
+}, 8000)
+
+// keydown
+
+document.addEventListener("keydown", function(event) {
+  cl(event.key)
+  if (event.key === Enter) {
+    cl('Faaaaaaaaaaaaaaaaaaala timóteo.')
+  }
+
+})

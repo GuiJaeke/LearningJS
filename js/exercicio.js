@@ -1,7 +1,7 @@
 function fazli() {
     var criaul = document.createElement('ul');
     var pegalista = document.getElementsByTagName('ul')
-    var insira = document.getElementById('bah').addEventListener('click', function () {
+    var insira = document.getElementById('bah').addEventListener('click', function (event) {
         var criali = document.createElement('li')
         var texto = document.querySelector('#inputtxt')
         gettxt = document.createTextNode(texto.value)
@@ -12,6 +12,22 @@ function fazli() {
             criali.appendChild(gettxt)
             pegalista[0].appendChild(criali)
         }
+
+
+
+    })
+    var enter = document.getElementById('bah').addEventListener('keydown', function (event) {
+        if (event.key === enter){
+        var criali = document.createElement('li')
+        var texto = document.querySelector('#inputtxt')
+        gettxt = document.createTextNode(texto.value)
+        if (!texto.value) {
+            alert("Insira um texto!")
+        }
+        else {
+            criali.appendChild(gettxt)
+            pegalista[0].appendChild(criali)
+        }}
 
 
 
@@ -225,6 +241,8 @@ var sub = document.getElementById('sub').addEventListener('click', function () {
         let segnum = number2.join('')
         cl(segnum)
         let conta = parseInt(primnum) - parseInt (segnum)
+        number = []
+        number2 = []
         sum.removeChild(print)
         print = document.createTextNode(conta)
         sum.appendChild(print)
@@ -376,8 +394,12 @@ var divis = document.getElementById('divis').addEventListener('click', function 
         print = document.createTextNode(conta)
         sum.appendChild(print)
         res.appendChild(sum)    
-    })
 })
-
-
-
+})
+x = 0
+// var gordo = ["GORDO ",]
+// while (x < 10) {
+//     gordo.push(" GORDO")
+//     alert(gordo)
+//     x++
+// }
