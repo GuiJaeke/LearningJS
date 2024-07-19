@@ -1,13 +1,14 @@
-var modulo = require('./node.js')
+const minimist = require('minimist')
 
-const soma = modulo.soma
-
-soma(2, 5)
-
-soma(5,8)
 
 var path = require('path')
 
 var extension = path.extname('arquivo.xml')
 
 console.log(extension)
+
+console.log(process.argv)
+
+var args = minimist(process.argv.slice(2))
+
+console.log(args)
