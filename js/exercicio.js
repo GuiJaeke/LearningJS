@@ -1,7 +1,7 @@
 function fazli() {
     var criaul = document.createElement('ul');
     var pegalista = document.getElementsByTagName('ul')
-    var insira = document.getElementById('bah').addEventListener('click', function (event) {
+    var insira = document.getElementById('bah').addEventListener('click', function () {
         var criali = document.createElement('li')
         var texto = document.querySelector('#inputtxt')
         gettxt = document.createTextNode(texto.value)
@@ -12,22 +12,6 @@ function fazli() {
             criali.appendChild(gettxt)
             pegalista[0].appendChild(criali)
         }
-
-
-
-    })
-    var enter = document.getElementById('bah').addEventListener('keydown', function (event) {
-        if (event.key === enter){
-        var criali = document.createElement('li')
-        var texto = document.querySelector('#inputtxt')
-        gettxt = document.createTextNode(texto.value)
-        if (!texto.value) {
-            alert("Insira um texto!")
-        }
-        else {
-            criali.appendChild(gettxt)
-            pegalista[0].appendChild(criali)
-        }}
 
 
 
@@ -37,10 +21,13 @@ function fazli() {
 fazli()
 
 // espaço //
-
-var res = document.querySelector('.res')
-var number = []
-function numeros() {
+function calculdadora() {
+    var number = []
+    const visor = document.createElement('p')
+    var textVisor = document.createTextNode("0")
+    var res = document.querySelector('.res')
+    visor.appendChild(textVisor)
+    res.appendChild(visor)
     var num1 = document.getElementById('1').addEventListener('click', function () {
         number.push(1),
             cl(number)
@@ -96,18 +83,18 @@ function numeros() {
         cl(number)
     }
     )
-}
-numeros()
-cl(number)
+
+
 var soma = document.getElementById('soma').addEventListener('click', function () {
-    primnum = number.join('')
+    let primnum = number.join('')
     cl(primnum)
     let sum = document.createElement('p')
     var print = document.createTextNode(primnum)
+    res.removeChild(visor)
     sum.appendChild(print)
     res.appendChild(sum)
 
-    let number2 = []
+    var number2 = []
     var num1 = document.getElementById('1').addEventListener('click', function () {
         number2.push(1),
             cl(number2)
@@ -162,27 +149,28 @@ var soma = document.getElementById('soma').addEventListener('click', function ()
         cl(number2)
     }
     )
-    resul = document.getElementById('resul').addEventListener('click', function() {
+    resul = document.getElementById('resul').addEventListener('click', function () {
         let segnum = number2.join('')
         cl(segnum)
-        let conta = parseInt(primnum) + parseInt (segnum)
+        let conta = parseInt(primnum) + parseInt(segnum)
         sum.removeChild(print)
         print = document.createTextNode(conta)
         sum.appendChild(print)
-        res.appendChild(sum)    
+        res.appendChild(sum)
     })
 }
-    
+
 )
 var sub = document.getElementById('sub').addEventListener('click', function () {
     primnum = number.join('')
     cl(primnum)
     let sum = document.createElement('p')
     var print = document.createTextNode(primnum)
+    res.removeChild(visor)
     sum.appendChild(print)
     res.appendChild(sum)
-    
-    let number2 = []
+
+    var number2 = []
     var num1 = document.getElementById('1').addEventListener('click', function () {
         number2.push(1),
             cl(number2)
@@ -237,16 +225,16 @@ var sub = document.getElementById('sub').addEventListener('click', function () {
         cl(number2)
     }
     )
-    resul = document.getElementById('resul').addEventListener('click', function() {
+    resul = document.getElementById('resul').addEventListener('click', function () {
         let segnum = number2.join('')
         cl(segnum)
-        let conta = parseInt(primnum) - parseInt (segnum)
-        number = []
-        number2 = []
+        let conta = parseInt(primnum) - parseInt(segnum)
         sum.removeChild(print)
         print = document.createTextNode(conta)
         sum.appendChild(print)
-        res.appendChild(sum)    
+        res.appendChild(sum)
+        number = []
+        number2 = []
     })
 }
 )
@@ -255,10 +243,11 @@ var mult = document.getElementById('mult').addEventListener('click', function ()
     cl(primnum)
     let sum = document.createElement('p')
     var print = document.createTextNode(primnum)
+    res.removeChild(visor)
     sum.appendChild(print)
     res.appendChild(sum)
-    
-    let number2 = []
+
+    var number2 = []
     var num1 = document.getElementById('1').addEventListener('click', function () {
         number2.push(1),
             cl(number2)
@@ -313,16 +302,15 @@ var mult = document.getElementById('mult').addEventListener('click', function ()
         cl(number2)
     }
     )
-    resul = document.getElementById('resul').addEventListener('click', function() {
-        let segnum = number2.join('')
+    resul = document.getElementById('resul').addEventListener('click', function () {
+        var segnum = number2.join('')
         cl(segnum)
-        number = []
-        number2 = []
-        let conta = parseInt(primnum) * parseInt (segnum)
+        let conta = parseInt(primnum) * parseInt(segnum)
         sum.removeChild(print)
         print = document.createTextNode(conta)
         sum.appendChild(print)
-        res.appendChild(sum)    
+        res.appendChild(sum)
+        
     })
 })
 var divis = document.getElementById('divis').addEventListener('click', function () {
@@ -330,10 +318,11 @@ var divis = document.getElementById('divis').addEventListener('click', function 
     cl(primnum)
     let sum = document.createElement('p')
     var print = document.createTextNode(primnum)
+    res.removeChild(visor)
     sum.appendChild(print)
     res.appendChild(sum)
-    
-    let number2 = []
+
+    var number2 = []
     var num1 = document.getElementById('1').addEventListener('click', function () {
         number2.push(1),
             cl(number2)
@@ -388,23 +377,38 @@ var divis = document.getElementById('divis').addEventListener('click', function 
         cl(number2)
     }
     )
-    resul = document.getElementById('resul').addEventListener('click', function() {
+    resul = document.getElementById('resul').addEventListener('click', function () {
         let segnum = number2.join('')
         cl(segnum)
-        number = []
-        number2 = []
-        let conta = parseInt(primnum) / parseInt (segnum)
+        let conta = parseInt(primnum) / parseInt(segnum)
         sum.removeChild(print)
         print = document.createTextNode(conta)
         sum.appendChild(print)
         res.appendChild(sum)
-        
+        return       
+    })
+
 })
+}
+liga = 0
+var reset = document.getElementById('limp').addEventListener('click', function () {
+    if (liga == 0) {
+        alert('Ligue a calculadora')
+    }
+    else {
+        calculdadora()
+    }
+
 })
-x = 0
-// var gordo = ["GORDO ",]
-// while (x < 10) {
-//     gordo.push(" GORDO")
-//     alert(gordo)
-//     x++
-// }
+var LIGAR = document.getElementById('ligar').addEventListener('click', function () {
+    if (liga != 0) {
+        alert("para fazer outra conta, aperte em RESET")
+    }
+    else{
+        calculdadora()
+        liga++
+    }
+})
+
+
+

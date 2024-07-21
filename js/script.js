@@ -90,8 +90,6 @@ function soma (a, b) {
   return soma
 }
 
-var res = soma (55, 88)
-console.log(res)
 
 //                 DOM                 //
 function ulSite() {
@@ -242,25 +240,25 @@ function cl(a) {
 
 // objetos e this
 
-let pessoa = {
-  nome: "marqueens",
-  idade: 32,
-  falar: function() {
-    cl("olá mi amigo")
-  },
-  sum: function (a, b) {
-    return a + b
-  },
-  dznome: function() {
-    console.log("O meu nome é " + this.nome)
-  }
-};
+// let pessoa = {
+//   nome: "marqueens",
+//   idade: 32,
+//   falar: function() {
+//     cl("olá mi amigo")
+//   },
+//   sum: function (a, b) {
+//     return a + b
+//   },
+//   dznome: function() {
+//     console.log("O meu nome é " + this.nome)
+//   }
+// };
 
-cl(pessoa)
-pessoa.dznome()
-let sum = pessoa.sum(65, 22);
+// cl(pessoa)
+// pessoa.dznome()
+// let sum = pessoa.sum(65, 22);
 
-cl(sum)
+// cl(sum)
 
 // acessando tags
 
@@ -271,7 +269,6 @@ cl(lis)
 // querySelector e querySelectorAll
 
 var liqs = document.querySelector('ul')
-
 cl(liqs)
 
 var liqs = document.querySelectorAll('li')
