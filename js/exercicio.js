@@ -21,11 +21,15 @@ function fazli() {
 fazli()
 
 // espaço //
+var res = document.querySelector('.res')
+var sum = document.createElement('p')
+var conta 
+var print
 function calculdadora() {
     var number = []
     const visor = document.createElement('p')
     var textVisor = document.createTextNode("0")
-    var res = document.querySelector('.res')
+    
     visor.appendChild(textVisor)
     res.appendChild(visor)
     var num1 = document.getElementById('1').addEventListener('click', function () {
@@ -88,8 +92,8 @@ function calculdadora() {
 var soma = document.getElementById('soma').addEventListener('click', function () {
     let primnum = number.join('')
     cl(primnum)
-    let sum = document.createElement('p')
-    var print = document.createTextNode(primnum)
+    
+    print = document.createTextNode(primnum)
     res.removeChild(visor)
     sum.appendChild(print)
     res.appendChild(sum)
@@ -152,11 +156,14 @@ var soma = document.getElementById('soma').addEventListener('click', function ()
     resul = document.getElementById('resul').addEventListener('click', function () {
         let segnum = number2.join('')
         cl(segnum)
-        let conta = parseInt(primnum) + parseInt(segnum)
+        conta = parseInt(primnum) + parseInt(segnum)
         sum.removeChild(print)
         print = document.createTextNode(conta)
         sum.appendChild(print)
         res.appendChild(sum)
+        number = undefined
+        number2 = undefined
+        return
     })
 }
 
@@ -164,8 +171,8 @@ var soma = document.getElementById('soma').addEventListener('click', function ()
 var sub = document.getElementById('sub').addEventListener('click', function () {
     primnum = number.join('')
     cl(primnum)
-    let sum = document.createElement('p')
-    var print = document.createTextNode(primnum)
+    
+    print = document.createTextNode(primnum)
     res.removeChild(visor)
     sum.appendChild(print)
     res.appendChild(sum)
@@ -233,16 +240,17 @@ var sub = document.getElementById('sub').addEventListener('click', function () {
         print = document.createTextNode(conta)
         sum.appendChild(print)
         res.appendChild(sum)
-        number = []
-        number2 = []
+        number = undefined
+        number2 = undefined
+        return
     })
 }
 )
 var mult = document.getElementById('mult').addEventListener('click', function () {
     primnum = number.join('')
     cl(primnum)
-    let sum = document.createElement('p')
-    var print = document.createTextNode(primnum)
+    
+    print = document.createTextNode(primnum)
     res.removeChild(visor)
     sum.appendChild(print)
     res.appendChild(sum)
@@ -310,14 +318,16 @@ var mult = document.getElementById('mult').addEventListener('click', function ()
         print = document.createTextNode(conta)
         sum.appendChild(print)
         res.appendChild(sum)
-        
+        number = undefined
+        number2 = undefined
+        return
     })
 })
 var divis = document.getElementById('divis').addEventListener('click', function () {
     primnum = number.join('')
     cl(primnum)
-    let sum = document.createElement('p')
-    var print = document.createTextNode(primnum)
+    
+    print = document.createTextNode(primnum)
     res.removeChild(visor)
     sum.appendChild(print)
     res.appendChild(sum)
@@ -385,7 +395,9 @@ var divis = document.getElementById('divis').addEventListener('click', function 
         print = document.createTextNode(conta)
         sum.appendChild(print)
         res.appendChild(sum)
-        return       
+        number = undefined
+        number2 = undefined
+        return   
     })
 
 })
@@ -396,7 +408,11 @@ var reset = document.getElementById('limp').addEventListener('click', function (
         alert('Ligue a calculadora')
     }
     else {
+        res.removeChild(sum)
+        sum.removeChild(print)
+        number2 = undefined
         calculdadora()
+        
     }
 
 })
@@ -409,6 +425,8 @@ var LIGAR = document.getElementById('ligar').addEventListener('click', function 
         liga++
     }
 })
+
+
 
 
 
