@@ -392,7 +392,7 @@ var divis = document.getElementById('divis').addEventListener('click', function 
         cl(segnum)
         let conta = parseInt(primnum) / parseInt(segnum)
         sum.removeChild(print)
-        print = document.createTextNode(conta)
+        print = document.createTextNode(conta.toFixed(2))
         sum.appendChild(print)
         res.appendChild(sum)
         number = undefined
