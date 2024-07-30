@@ -22,7 +22,9 @@ app.get('/home', (req, res) => {
 });
 
 app.get('/dashboard', (req, res)=>{
-    res.render('dashboard')
+    const items = ["item a", "item b", "item c"]
+
+    res.render('dashboard', {items})
 })
 
 // Inicia o servidor na porta 3000
