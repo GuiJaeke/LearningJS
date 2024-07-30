@@ -14,8 +14,16 @@ app.get('/home', (req, res) => {
         sobrenome: "gaydré",
         age: 15
     }
-    res.render('home', {user: user});
+    const palavra = 'teste'
+
+    const auth = true
+
+    res.render('home', {user: user, palavra, auth});
 });
+
+app.get('/dashboard', (req, res)=>{
+    res.render('dashboard')
+})
 
 // Inicia o servidor na porta 3000
 app.listen(3000, () => {
