@@ -9,7 +9,12 @@ app.set('view engine', 'handlebars');
 
 // Rota para a página inicial
 app.get('/home', (req, res) => {
-    res.render('home', { layout: false });
+    const user = {
+        user: "dedeu",
+        sobrenome: "gaydré",
+        age: 15
+    }
+    res.render('home', {user: user});
 });
 
 // Inicia o servidor na porta 3000
