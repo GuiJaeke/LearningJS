@@ -27,6 +27,22 @@ app.get('/dashboard', (req, res)=>{
     res.render('dashboard', {items})
 })
 
+app.get('/post', (req, res) =>{
+    const post = {
+        title: 'aprender ser o Alan Turing',
+        category: 'javascript',
+        body: 'este artigo é um tchupreks and um tchuprrey',
+        comments: 4
+    }
+
+
+
+
+    res.render('blogpost', {post})
+
+}
+    )
+
 // Inicia o servidor na porta 3000
 app.listen(3000, () => {
     console.log('Servidor rodando na porta 3000');
