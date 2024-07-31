@@ -1,6 +1,5 @@
 const express = require('express');
 const { engine } = require('express-handlebars'); // Importando o engine da forma correta
-const router = express.Router()
 const app = express();
 
 
@@ -48,23 +47,25 @@ app.post('/users/save', (req, res) =>{
         nome: req.body.name,
         senha: req.body.senha
     }
-    var userLogin = undefined
-    if(cdt.nome == 'tooooma'){
+    let userLogin = null
+    if(cdt.nome == 'jaeke' && cdt.senha == '8246'){
         let userLogin = true
         console.log(userLogin)
-    }else {
+        res.render('dashboard', {cdt, userLogin})
+    } else {
         let userLogin = false
         console.log(userLogin)
+        res.render('dashboard', {cdt, userLogin})
     }
     console.log(cdt)
-    res.render('dashboard', {cdt})
+    // res.render('dashboard', {cdt})
 })
 
 app.get('/post', (req, res) =>{
     const post = {
         title: 'aprender ser o Alan Turing',
         category: 'javascript',
-        body: 'este artigo é um tchupreks and um tchuprrey',
+        body: 'este artigo é um tchupreks and um tchuprey',
         comments: 4
     }
     res.render('blogpost', {post})
