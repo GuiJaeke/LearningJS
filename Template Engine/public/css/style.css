@@ -3,3 +3,17 @@ body{
     color: rgb(185, 184, 184);
     margin: 50px;
 }
+input{
+    background-color: black;
+    color: white;
+    border-right: 0px;
+    border-left: 0px;
+    border-top: 0px;
+    border-color: rgb(247, 0, 255);
+    margin-bottom: 10px;
+    
+}
+input:hover{
+    transform: scale(1.3);
+    transition: .3s;
+}

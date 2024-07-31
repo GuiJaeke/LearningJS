@@ -71,7 +71,9 @@ app.get('/post', (req, res) =>{
     res.render('blogpost', {post})
 }
     )
-
+app.use(function(req, res, next){
+        res.status(404).render(`404`)
+    })
 // Inicia o servidor na porta 3000
 app.listen(3000, () => {
     console.log('Servidor rodando na porta 3000');

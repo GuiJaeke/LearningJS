@@ -1,11 +1,7 @@
     <title>Home Handlebars</title>
     <h1>titulo principal site</h1>
     <p>Nome verdadeiro do andré é {{user.user}} {{user.sobrenome}}, e ele tem apenas {{user.age}} aninhus aiaiai</p>
-    {{#if auth}}
         <p>
-            Você se autenticou, <a href="/dashboard">clique aqui</a> para acessar a tela inicial
+            Logue em sua conta para acessar a tela inicial! <a href="/form">clique aqui</a>
         </p>
 
-    {{else}}
-        <p>quack quack patinho quack quack</p>
-    {{/if}}
