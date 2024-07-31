@@ -3,9 +3,12 @@ const { engine } = require('express-handlebars'); // Importando o engine da form
 
 const app = express();
 
+
 // Configuração do motor de visualização Handlebars
 app.engine('handlebars', engine()); // Usando engine() em vez de exphbs()
 app.set('view engine', 'handlebars');
+
+app.use(express.static('public'))
 
 // Rota para a página inicial
 app.get('/home', (req, res) => {
