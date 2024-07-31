@@ -1,8 +1,8 @@
-<h1>Paraaaaaaaaabens filho, você acessou</h1>
-<ul>
-    {{#each items}}
-        <li>{{this}}</li>
-    {{/each}}
-</ul>
+{{#if userLogin}}
 
-<a href="/home">Voltar jaeke1000grau</a>
+    <h1>Usuário não cadastrado, <a href="">aperte aqui</a> para cadastrar</h1> 
+{{else}}
+    <h1>Paraaaaaaaaabens {{cdt.nome}}, você acessou!</h1>
+{{/if}}
+
+<a href="/form">Voltar jaeke1000grau</a>
