@@ -1,6 +1,7 @@
 const express = require('express');
 const { engine } = require('express-handlebars'); // Importando o engine da forma correta
 const app = express();
+exports.app = app;
 
 
 // Configuração do motor de visualização Handlebars
@@ -61,16 +62,6 @@ app.post('/users/save', (req, res) =>{
     // res.render('dashboard', {cdt})
 })
 
-app.get('/post', (req, res) =>{
-    const post = {
-        title: 'aprender ser o Alan Turing',
-        category: 'javascript',
-        body: 'este artigo é um tchupreks and um tchuprey',
-        comments: 4
-    }
-    res.render('blogpost', {post})
-}
-    )
 app.use(function(req, res, next){
         res.status(404).render(`404`)
     })
