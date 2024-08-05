@@ -29,7 +29,7 @@ app.post('/book/insert', (req, res) => {
         if (err) {
             console.log(err)
         }
-
+        
         res.redirect('/home')
     })
 })
@@ -47,6 +47,23 @@ app.get('/books', (req, res) =>{
 
         console.log(books)
         res.render('books', { books })
+    })
+})
+app.post('/search', (req, res) =>{
+    const livro1 = req.body.num
+
+    const sql3 = `SELECT * FROM books WHERE ID = '${livro1}';`
+
+    conn.query(sql3, function(err, data) {
+
+        if (err) {
+            console.log(err)
+            return
+        }
+        const book = data
+
+        console.log(book)
+        res.render('pesquisa', { book })
     })
 })
 
