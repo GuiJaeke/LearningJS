@@ -3,7 +3,8 @@
     {{#each books}}
         <div class="single-book">
             #{{this.ID}} <span>Titulo do livro: {{this.TITLE}}</span> <span>quantidade de página: {{this.PAGE}} paginas</span>
+            <a href="/edit/{{this.ID}}">Editar</a>
         </div>
     {{/each}}
 </div>
-<a href="/home" class="">Voltar</a>
+<h2><a href="/home" >Voltar</a></h2>
