@@ -53,10 +53,31 @@ app.post('/users/create', async (req, res) =>{
     } else {
         newsletter = false
     }
-    console.log(req.body)
+    
     await user.create({name, occupation, newsletter})
     res.redirect('/home')
 
+}) 
+app.post('/edit/update', async (req, res) =>{
+    const id = req.body.id
+    const name = req.body.name
+    const occupation = req.body.occupation
+    let newsletter = req.body.newsletter
+
+    if(newsletter === 'on') {
+        newsletter = true
+    } else {
+        newsletter = false
+    }
+    const userData = {
+        id,
+        name,
+        occupation,
+        newsletter
+    }
+        await user.update(userData, {where: {id: id}})
+    
+    res.redirect('/home')
 }) 
 app.post('/delete/:id', async (req, res) => {
     const id = req.params.id

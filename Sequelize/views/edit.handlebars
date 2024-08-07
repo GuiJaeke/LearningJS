@@ -1,12 +1,12 @@
-<form action="/edit/post" method="post">
+<form action="/edit/update" method="post">
     <div class="form-control">
         <input type="hidden" name="id" value="{{User.id}}">
-        <label for="title">Nome</label>
-        <input type="text" name="title" value="{{User.name}}">
+        <label for="occupation">Nome</label>
+        <input type="text" name="name" value="{{User.name}}">
     </div>
     <div class="form-control">
-        <label for="page">Profissão</label>
-        <input type="text" name="page" value="{{User.occupation}}">
+        <label for="occupation">Profissão</label>
+        <input type="text" name="occupation" value="{{User.occupation}}">
     <input type="submit" value="Editar">
     
     </div>

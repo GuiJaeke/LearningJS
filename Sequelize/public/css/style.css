@@ -3,6 +3,20 @@ body{
     color: rgb(185, 184, 184);
     margin: 50px;
 }
+#navbar{
+    padding: 0.5em;
+    margin-bottom: 1em;
+}
+
+#navbar ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+#navbar ul li{
+    margin-left: 1em;
+    font-size: 25px;
+}
 input{
     background-color: black;
     color: white;
@@ -51,7 +65,7 @@ h1, h2{
     flex: 1 1 29%;
     max-width: 29%;
     color: white;
-    display: flex;
+    
 }
 a{
     margin: 0 auto;
