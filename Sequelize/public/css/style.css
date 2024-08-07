@@ -29,7 +29,13 @@ form{
 h1, h2{
     text-align: center;
 }
-.single-book{
+.users{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    
+}
+.user{
     border: 1px;
     border-style: double;
     display: flex;
@@ -40,7 +46,20 @@ h1, h2{
     width: 600px;
     margin-bottom: 15px;
     padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 1rem 3rem rgba(255, 255, 255, 0.175);
+    flex: 1 1 29%;
+    max-width: 29%;
+    color: white;
+    display: flex;
 }
 a{
     margin: 0 auto;
+}
+
+.form-checkbox{
+    flex-direction: row;
+}
+.form-checkbox input {
+    margin-right: 10px;
 }

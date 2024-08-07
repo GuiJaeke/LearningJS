@@ -1,1 +1,9 @@
 <h1>Sequelize</h1>
+<div class="users">
+    {{#each users}}
+        <div class="user">
+            <span>Nome: {{this.name}}</span> <span>profissão: {{this.occupation}}</span>
+            <a href="/user/{{this.id}}">Página do usuário</a>          
+        </div>
+    {{/each}}
+</div>

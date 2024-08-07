@@ -1,6 +1,7 @@
 const express = require('express')
 const { engine } = require('express-handlebars')
 const conn = require('./BD/conn')
+const user = require('./models/User')
 const app = express()
 
 app.use(
@@ -18,106 +19,60 @@ app.set('view engine', 'handlebars')
 
 app.use(express.static('public'))
 
-app.get('/home', (req, res) =>{
-    res.render('home')
+app.get('/home', async (req, res) =>{
+    const users = await user.findAll({raw: true})
+    console.log(users)
+    res.render('home', { users: users })
 })
-
-app.post('/book/insert', (req, res) => {
-    const title = req.body.title
-    const page = req.body.page
-    const sql = `INSERT INTO BOOKS (??, ??) VALUES (?, ?)`
-    const data = ['TITLE', 'PAGE', title, page]
- 
-    conn.query(sql, data, function(err){
-        if (err) {
-            console.log(err)
-        }
-        
-        res.redirect('/home')
-    })
-})
-
-
-app.get('/books', (req, res) =>{
-    const sql2 = `SELECT * FROM books;`
-
-    conn.query(sql2, function(err, data) {
-
-        if (err) {
-            console.log(err)
-            return
-        }
-        const books = data
-
-        console.log(books)
-        res.render('books', { books })
-    })
-})
-app.post('/search', (req, res) =>{
-    const id = req.body.num
-
-    const sql3 = `SELECT * FROM books WHERE ?? = ?;`
-    const data = ['ID', id]
-
-    conn.query(sql3, data, function(err, data) {
-
-        if (err) {
-            console.log(err)
-            return
-        }
-        const book = data
-        console.log(book)
-        res.render('pesquisa', { book })
-    })
-})
-app.get('/edit/:id', (req, res) =>{
+app.get('/user/:id', async (req, res) => {
     const id = req.params.id
 
-    const sql4 = `SELECT * FROM books WHERE ?? = ?';`
-    const data = ['ID', id]
-
-    conn.query(sql4, data, function(err, data) {
-
-        if (err) {
-            console.log(err)
-            return
-        }
-        const book = data[0]
-        console.log(book)
-        res.render('editbook', { book })
-    })
+    const User = await user.findOne({ raw: true, where: { id: id } })
+    
+    console.log(User)
+    res.render('userview', { User })
 })
-app.post('/edit/post', (req, res) => {
-    const id = req.body.id
-    const title = req.body.title
-    const page = req.body.page
-    const sql = `UPDATE books SET ?? = ?, ?? = ? WHERE ?? = ?`
-    const data = ['TITLE', title, 'PAGE', page, 'ID', id]
- 
-    conn.query(sql, data, function(err){
-        if (err) {
-            console.log(err)
-        }
-        
-        res.redirect('/books')
-    })
-})
-app.post('/delete/:id', (req, res) => {
+app.get('/edit/:id', async (req, res) => {
     const id = req.params.id
-    const sql = `DELETE FROM books WHERE ID = ${id}`
- 
-    conn.query(sql, function(err){
-        if (err) {
-            console.log(err)
-        }
-        
-        res.redirect('/books')
-    })
+
+    const User = await user.findOne({ raw: true, where: { id: id } })
+    
+    console.log(User)
+    res.render('edit', { User })
 })
+app.get('/users/create', (req, res) =>{
+    res.render('cadUser')
+})
+app.post('/users/create', async (req, res) =>{
+    const name = req.body.name
+    const occupation = req.body.occupation
+    let newsletter = req.body.newsletter
+
+    if(newsletter === 'on') {
+        newsletter = true
+    } else {
+        newsletter = false
+    }
+    console.log(req.body)
+    await user.create({name, occupation, newsletter})
+    res.redirect('/home')
+
+}) 
+app.post('/delete/:id', async (req, res) => {
+    const id = req.params.id
+
+    await user.destroy({where: { id: id } })
+    
+    res.redirect('/home')
+})
+
 
 app.use(function(req, res, next){
     res.status(404).render(`404`)
 })
 console.log("Conectou ao MySQL!")
 console.log("sistema rodando na porta 3000!")
-app.listen(3000)
+
+conn.sync().then(() => {
+    app.listen(3000)
+}).catch((err) => {console.log(err)})
