@@ -24,10 +24,11 @@ app.get('/home', (req, res) =>{
 
 app.post('/book/insert', (req, res) => {
     const title = req.body.title
-    const page = req.body.pagess
-    const sql = `UPDATE INTO BOOKS (TITLE, PAGE) VALUES ('${title}', '${page}')`
+    const page = req.body.page
+    const sql = `INSERT INTO BOOKS (??, ??) VALUES (?, ?)`
+    const data = ['TITLE', 'PAGE', title, page]
  
-    pool.query(sql, function(err){
+    pool.query(sql, data, function(err){
         if (err) {
             console.log(err)
         }
@@ -55,9 +56,10 @@ app.get('/books', (req, res) =>{
 app.post('/search', (req, res) =>{
     const id = req.body.num
 
-    const sql3 = `SELECT * FROM books WHERE ID = '${id}';`
+    const sql3 = `SELECT * FROM books WHERE ?? = ?;`
+    const data = ['ID', id]
 
-    pool.query(sql3, function(err, data) {
+    pool.query(sql3, data, function(err, data) {
 
         if (err) {
             console.log(err)
@@ -71,9 +73,10 @@ app.post('/search', (req, res) =>{
 app.get('/edit/:id', (req, res) =>{
     const id = req.params.id
 
-    const sql4 = `SELECT * FROM books WHERE ID = '${id}';`
+    const sql4 = `SELECT * FROM books WHERE ?? = ?';`
+    const data = ['ID', id]
 
-    pool.query(sql4, function(err, data) {
+    pool.query(sql4, data, function(err, data) {
 
         if (err) {
             console.log(err)
@@ -88,9 +91,10 @@ app.post('/edit/post', (req, res) => {
     const id = req.body.id
     const title = req.body.title
     const page = req.body.page
-    const sql = `UPDATE books SET TITLE = '${title}', PAGE = '${page}' WHERE ID = ${id}`
+    const sql = `UPDATE books SET ?? = ?, ?? = ? WHERE ?? = ?`
+    const data = ['TITLE', title, 'PAGE', page, 'ID', id]
  
-    pool.query(sql, function(err){
+    pool.query(sql, data, function(err){
         if (err) {
             console.log(err)
         }

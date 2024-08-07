@@ -1,0 +1,46 @@
+body{
+    background-color: black;
+    color: rgb(185, 184, 184);
+    margin: 50px;
+}
+input{
+    background-color: black;
+    color: white;
+    border-right: 0px;
+    border-left: 0px;
+    border-top: 0px;
+    border-color: rgb(247, 0, 255);
+    margin-bottom: 10px;
+    
+}
+input:hover{
+    transform: scale(1.01);
+    transition: .3s;
+}
+.form-control{
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+}
+form{
+    width: 450px;
+    margin: 0 auto;
+}
+h1, h2{
+    text-align: center;
+}
+.single-book{
+    border: 1px;
+    border-style: double;
+    display: flex;
+    flex-direction: column;
+    font-size: 35px;
+    border-color: pink;  
+    margin: 0 auto;
+    width: 600px;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+a{
+    margin: 0 auto;
+}
