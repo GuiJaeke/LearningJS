@@ -6,6 +6,7 @@ body{
 #navbar{
     padding: 0.5em;
     margin-bottom: 1em;
+    border: 1px;
 }
 
 #navbar ul{
@@ -16,6 +17,15 @@ body{
 #navbar ul li{
     margin-left: 1em;
     font-size: 25px;
+}
+#navbar ul li a{
+    color: rgb(245, 0, 245);
+    text-decoration: none; 
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+#navbar ul li a:hover{
+    transform: scale(1.2);
+    color: #a200ff;
 }
 input{
     background-color: black;
@@ -28,7 +38,7 @@ input{
     
 }
 input:hover{
-    transform: scale(1.01);
+    transform: scale(1.06);
     transition: .3s;
 }
 .form-control{
@@ -73,7 +83,12 @@ a{
 
 .form-checkbox{
     flex-direction: row;
+    transition: transform .5s ease,;
 }
 .form-checkbox input {
     margin-right: 10px;
+}
+.form-checkbox input:hover {
+    transform: scale(50);
+    
 }

@@ -2,6 +2,7 @@ const express = require('express')
 const { engine } = require('express-handlebars')
 const conn = require('./BD/conn')
 const user = require('./models/User')
+const address = require('./models/address')
 const app = express()
 
 app.use(
@@ -21,7 +22,7 @@ app.use(express.static('public'))
 
 app.get('/home', async (req, res) =>{
     const users = await user.findAll({raw: true})
-    console.log(users)
+    
     res.render('home', { users: users })
 })
 app.get('/user/:id', async (req, res) => {
@@ -94,6 +95,9 @@ app.use(function(req, res, next){
 console.log("Conectou ao MySQL!")
 console.log("sistema rodando na porta 3000!")
 
-conn.sync().then(() => {
+conn
+    .sync()
+    //.sync({force: true})
+    .then(() => {
     app.listen(3000)
 }).catch((err) => {console.log(err)})
