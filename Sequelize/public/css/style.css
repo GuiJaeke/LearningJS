@@ -25,7 +25,22 @@ body{
 }
 #navbar ul li a:hover{
     transform: scale(1.2);
-    color: #a200ff;
+    color: #9900ff;
+}
+.address-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+    width: 450px;
+    border: 1px;
+    border-color: pink;
+    border-style: solid;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.address-list p{
+    margin-right: 1em;
 }
 input{
     background-color: black;

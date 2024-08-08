@@ -13,8 +13,6 @@ app.use(
 
 app.use(express.json())
 
-
-
 app.engine('handlebars', engine())
 app.set('view engine', 'handlebars')
 
@@ -28,21 +26,28 @@ app.get('/home', async (req, res) =>{
 app.get('/user/:id', async (req, res) => {
     const id = req.params.id
 
-    const User = await user.findOne({ raw: true, where: { id: id } })
-    
-    console.log(User)
-    res.render('userview', { User })
+    try {
+        const User = await user.findOne({ include: address, where: { id: id } })
+        console.log(User)
+        res.render('userview', { User: User.get({ plain: true }) })
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+app.get('/users/create', (req, res) =>{
+    res.render('cadUser')
 })
 app.get('/edit/:id', async (req, res) => {
     const id = req.params.id
 
-    const User = await user.findOne({ raw: true, where: { id: id } })
-    
-    console.log(User)
-    res.render('edit', { User })
-})
-app.get('/users/create', (req, res) =>{
-    res.render('cadUser')
+    try {
+        const User = await user.findOne({ include: address, where: { id: id } })
+        console.log(User)
+        res.render('edit', { User: User.get({ plain: true }) })
+    } catch (error) {
+        console.log(error)
+    }
 })
 app.post('/users/create', async (req, res) =>{
     const name = req.body.name
@@ -57,6 +62,24 @@ app.post('/users/create', async (req, res) =>{
     
     await user.create({name, occupation, newsletter})
     res.redirect('/home')
+
+}) 
+app.post('/address/create', async (req, res) =>{
+    const userId = req.body.UserId
+    const street = req.body.street
+    const number = req.body.number
+    const city = req.body.city
+    console.log(userId)
+    const Address = {
+        street,
+        number,
+        city,
+        userId,
+    }
+    
+    
+    await address.create(Address)
+    res.redirect(`/user/${userId}`)
 
 }) 
 app.post('/edit/update', async (req, res) =>{
@@ -97,7 +120,7 @@ console.log("sistema rodando na porta 3000!")
 
 conn
     .sync()
-    //.sync({force: true})
+    // .sync({force: true})
     .then(() => {
     app.listen(3000)
 }).catch((err) => {console.log(err)})
