@@ -41,6 +41,7 @@ body{
 }
 .address-list p{
     margin-right: 1em;
+    font-size: 19px;
 }
 input{
     background-color: black;
@@ -93,7 +94,16 @@ h1, h2{
     
 }
 a{
+    color: rgb(245, 0, 245);
+    text-decoration: none; 
+    transition: transform 0.3s ease, color 0.3s ease;
     margin: 0 auto;
+    display: flex;
+    justify-items: end;
+}
+a:hover{
+    transform: scale(1.2);
+    color: #9900ff;
 }
 
 .form-checkbox{

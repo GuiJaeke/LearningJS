@@ -110,6 +110,13 @@ app.post('/delete/:id', async (req, res) => {
     
     res.redirect('/home')
 })
+app.post('/del/address', async (req, res) => {
+    const id = req.body.ida
+    const userId = req.body.userid
+    await address.destroy({where: { id: id } })
+    
+    res.redirect(`/edit/${userId}`)
+})
 
 
 app.use(function(req, res, next){

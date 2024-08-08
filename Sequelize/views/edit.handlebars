@@ -20,10 +20,15 @@
     <input type="submit" value="Deletar">
 </form>
 
-
+{{#each User.addresses}}
 <div class="address-list">
     <p>Cidade: {{this.city}}</p>
     <p>Rua: {{this.street}}</p>
     <p>Numero {{this.number}}</p>
+    <form action="/del/address" method="post">
+        <input type="hidden" name="userid" value="{{this.userId}}">
+        <input type="hidden" name="ida" value="{{this.id}}">
+        <input type="submit" value="Excluir">
+    </form>
 </div>
 {{/each}}
