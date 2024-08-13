@@ -2,9 +2,9 @@ const task = require('../models/task')
 
 module.exports = class taskController {
     static createTask(req, res) {
-        res.render('task/create')
+        res.render('tasks/create')
     }
     static showTasks(req, res) {
-        res.render('task/all')
+        res.render('tasks/all')
     }
 }
