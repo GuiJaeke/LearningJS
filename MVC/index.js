@@ -20,6 +20,10 @@ app.use(express.static('public'))
 
 app.use('/tasks', taskRoutes)
 
+app.use(function(req, res, next){
+    res.status(404).render(`404`)
+})
+
 conn.sync().then(() => {
     app.listen(3000)
 }).catch((err) => console.log(err))
