@@ -14,6 +14,20 @@ module.exports = class taskController {
         await task.create(Task)
         res.redirect('/tasks/home')
     }
+    static async removeTask(req, res) {
+        const id = req.body.id
+
+        await task.destroy({where: {id: id} })
+        res.redirect('/tasks/home')
+    }
+    static async endTask(req, res) {
+        const id = req.body.finid
+        const Task = {
+            done: req.body.done === '0' ? true : false,
+        }
+        await task.update(Task, {where: {id: id} })
+        res.redirect('/tasks/home')
+    }
     static async showTasks(req, res) {
         const tasks = await task.findAll({raw: true})
         res.render('tasks/all', { tasks })

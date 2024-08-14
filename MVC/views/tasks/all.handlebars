@@ -1,7 +1,35 @@
+<ul>
+    {{#each tasks}}
+    <li>
+        <div class="task">
+            {{#if this.done}}
+            <div class="done">
+            <span><strong>Titulo: </strong>{{this.title}}</span>
+            <span><strong>Descrição: </strong>{{this.description}}</span>
+            </div>
+            {{else}}
+            
+                <span><strong>Titulo: </strong>{{this.title}}</span>
+                <span><strong>Descrição: </strong>{{this.description}}</span>
+            {{/if}}
+            <div class="btn">
+                <form action="/tasks/all" method="post">
+                    <input type="hidden" name="id" value="{{this.id}}">
+                    <input type="submit" value="Excluir"></input>
+                </form>
+                <form action="/tasks/update" method="post">
+                    {{#if this.done}}
+                    <input type="submit" value="Desfazer">
+                    {{else}}
+                    <input type="submit" value="Finalizar">
+                    {{/if}}
+                        <input type="hidden" name="finid" value="{{this.id}}">
+                        <input type="hidden" name="done" value="{{this.done}}">
+                    </input>
+                </form>
+            </div>
+        </div>
 
-{{#each tasks}}
-    <div class="task">
-        <span><strong>Titulo:</strong>{{this.title}}</span>
-        <span><strong>Descrição:</strong>{{this.description}}</span>
-    </div>
-{{/each}}
+    </li>
+    {{/each}}
+</ul>
